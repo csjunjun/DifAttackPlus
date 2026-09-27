@@ -1,20 +1,68 @@
 # DifAttack++
-## The official code for the paper 'DifAttack++: Query-Efficient Black-Box Adversarial Attack via Hierarchical Disentangled Feature Space in Cross–Domain'.
 
+Official implementation of our **IEEE TDSC 2026** paper:
 
-## Train autoencoders for image reconstruction and feature disentanglement:
-set mode="train" in main.py
-```
-Python main.py
+> **[DifAttack++: Query-Efficient Black-Box Adversarial Attack via Hierarchical Disentangled Feature Space in Cross-Domain](https://ieeexplore.ieee.org/document/11663277/)**
+
+## Training Autoencoders
+
+To train the autoencoders for image reconstruction and feature disentanglement, set:
+
+```python
+mode = "train"
 ```
 
-## Perform score-based black-box attack
-set mode="test" in main.py
+in `main.py`, and then run:
+
+```bash
+python main.py
 ```
-Python main.py
+
+## Performing Score-Based Black-Box Attacks
+
+To perform score-based black-box attacks, set:
+
+```python
+mode = "test"
 ```
-set testSensitivy=True to obtain the sensitivity of disentangled features in Fig.3 of the paper
+
+in `main.py`, and then run:
+
+```bash
+python main.py
+```
+
+### Attack Settings
+
+Configure `attackType` in `main.py` according to the desired attack setting:
+
+- **Open-set attack:** `attackType = None`
+- **Closed-set targeted attack:** `attackType = "FTM"`
+- **Closed-set untargeted attack:** `attackType = "PGN"`
+
+## Model Weights and Test Data
+
+The pretrained disentangled autoencoders and test data can be downloaded from Zenodo:
+
+https://zenodo.org/records/23003864
+
+The autoencoder files follow the naming convention:
+
+```text
+[victim_model]_[targeted/untargeted]
+```
+
+The `[victim_model]` prefix indicates the victim model that was excluded from the surrogate-model set during autoencoder training within the corresponding **Simple** or **Complex** model group. Therefore, when this model is used as the victim model, the corresponding autoencoder can be used for feature disentanglement during the black-box attack.
+
+The suffix indicates whether the autoencoder corresponds to the **targeted** or **untargeted** attack setting.
+
+The `ImageNetVal_random_Cropped224` folder contains the test images used for evaluation.
 
 ## Acknowledgements
-Part of the code is partially derived from ImageReconstruction [Github](https://github.com/SikanderBinMukaram/ImageReconstructionAutoEncoder/blob/main/ImageReconstruction.ipynb) and torchattacks [Github](https://github.com/Harry24k/adversarial-attacks-pytorch/tree/master).
 
+Part of this implementation is derived from or adapted based on the following open-source projects:
+
+- [ImageReconstruction](https://github.com/SikanderBinMukaram/ImageReconstructionAutoEncoder/blob/main/ImageReconstruction.ipynb)
+- [torchattacks](https://github.com/Harry24k/adversarial-attacks-pytorch/tree/master)
+
+We thank the authors for making their code publicly available.
