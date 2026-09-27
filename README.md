@@ -1,8 +1,37 @@
 # DifAttack++
+## The official code for the TDSC 2026 paper 'DifAttack++: Query-Efficient Black-Box Adversarial Attack via Hierarchical Disentangled Feature Space in Cross–Domain'.
+
+
+## Train autoencoders for image reconstruction and feature disentanglement:
+set mode="train" in main.py
+```
+Python main.py
+```
+
+## Perform score-based black-box attack
+set mode="test" in main.py
+```
+Python main.py
+```
+
+set attackType=None to perform attacks in open-set scenarios
+set attackType=FTM for closed-scenario targeted, attackType=PGN for closed-scenario untargeted
+
+## Model Weights and Datasets
+
+Please download the model weights and datasets from https://zenodo.org/records/23003864
+
+## Acknowledgements
+Part of the code is partially derived from ImageReconstruction [Github](https://github.com/SikanderBinMukaram/ImageReconstructionAutoEncoder/blob/main/ImageReconstruction.ipynb) and torchattacks [Github](https://github.com/Harry24k/adversarial-attacks-pytorch/tree/master).
+
+
+
+
+# DifAttack++
 
 Official implementation of our **IEEE TDSC 2026** paper:
 
-> **[DifAttack++: Query-Efficient Black-Box Adversarial Attack via Hierarchical Disentangled Feature Space in Cross-Domain](https://ieeexplore.ieee.org/document/11663277/)**
+> **DifAttack++: Query-Efficient Black-Box Adversarial Attack via Hierarchical Disentangled Feature Space in Cross-Domain**
 
 ## Training Autoencoders
 
