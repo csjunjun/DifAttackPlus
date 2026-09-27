@@ -87,6 +87,25 @@ The suffix indicates whether the autoencoder corresponds to the **targeted** or 
 
 The `ImageNetVal_random_Cropped224` folder contains the test images used for evaluation.
 
+## Contact
+
+If you have any questions regarding reproduction or the paper, please feel free to open an issue in this repository or contact me via email at [csjunliu@nii.ac.jp](mailto:csjunliu@nii.ac.jp).
+
+## Citation
+
+If you find this work useful for your research, please consider citing our paper:
+
+```bibtex
+@ARTICLE{DifAttackPlus2026TDSC,
+  author={Liu, Jun and Zhou, Jiantao and Zeng, Jiandian and Tian, Jinyu and Echizen, Isao},
+  journal={IEEE Transactions on Dependable and Secure Computing},
+  title={DifAttack++: Query-Efficient Black-Box Adversarial Attack via Hierarchical Disentangled Feature Space in Cross-Domain},
+  year={2026},
+  pages={1-18},
+  doi={10.1109/TDSC.2026.3726589}
+}
+```
+
 ## Acknowledgements
 
 Part of this implementation is derived from or adapted based on the following open-source projects:
