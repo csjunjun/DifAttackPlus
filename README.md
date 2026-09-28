@@ -1,6 +1,13 @@
 # DifAttack++
 ## The official code for the TDSC 2026 paper 'DifAttack++: Query-Efficient Black-Box Adversarial Attack via Hierarchical Disentangled Feature Space in Cross–Domain'.
 
+<p align="center">
+  <img src="framework.png" width="800">
+</p>
+
+<p align="center">
+  <em>Overview of the DifAttack++ framework.</em>
+</p>
 
 ## Train autoencoders for image reconstruction and feature disentanglement:
 set mode="train" in main.py
